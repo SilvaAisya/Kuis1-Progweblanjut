@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Master</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Data</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="col order-12">  
+       <h1>Form Data Mahasiswa</h1>
+       <hr>
+       <label for="nim">NIM</label>
+            <input type="text" name="nim" id="nim" class="form-control" [(ngModel)]="nim">
+            <label for="nama">NAMA</label>
+            <input type="text" name="nama" id="nama" class="form-control" [(ngModel)]="nama">
+            <label for="kelas">KELAS</label>
+            <input type="text" name="kelas" id="kelas" class="form-control" [(ngModel)]="kelas">
+        <br/>
+        <button class="btn btn-primary" (click)="tambahMhs()">Tambah Mahasiswa</button>
+    </div>
+    </div>
+    <div class="col order-12">
+      <h1>Data Mahasiswa</h1>
+      <hr>
+        <div class="card" style="width: 18rem;" *ngFor="let mhs of daftarMhs">
+        <div class="card-header">
+            <h4>{{ mhs.nama }}</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <h5>{{ mhs.nim }}</h5>
+              <h5>{{ mhs.kelas }}</h5>
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+          <h1> {{ Form }} </h1>
+          <hr/>-->
+            <!--<label for="nim">NIM</label>
+            <input type="text" name="nim" id="nim" class="form-control" [(ngModel)]="nim">
+            <label for="nama">NAMA</label>
+            <input type="text" name="nama" id="nama" class="form-control" [(ngModel)]="nama">
+            <label for="kelas">KELAS</label>
+            <input type="text" name="kelas" id="kelas" class="form-control" [(ngModel)]="kelas">
+        <br/>
+        <button class="btn btn-primary" (click)="tambahMhs()">Tambah Mahasiswa</button>
+        </div>
+    </div>
+    <hr>-->
+    <!--<div class="row"> 
+        <div class="col-md-6" *ngFor="let mhs of daftarMhs">
+            <h3>{{ mhs.nama }}</h3>
+            <h4>{{ mhs.nim }}</h4>
+            <p>{{ mhs.alamat}}</p>
+        </div>
+    </div>-->
+    <!--<div class="card" style="width: 18rem;">
+        <div class="card-header" *ngFor="let mhs of daftarMhs">
+            <h3>{{ mhs.nama }}</h3>
+        </div>
+        <ul class="list-group list-group-flush" *ngFor="let mhs of daftarMhs">
+            <li class="list-group-item">
+              <h4>{{ mhs.nim }}</h4>
+              <h4>{{ mhs.kelas }}</h4>
+            </li>
+      </ul>
+    </div>-->
+</div>
